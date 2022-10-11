@@ -1,0 +1,77 @@
+.registration
+    display: flex
+    justify-content: space-between
+    margin-top: 64px
+    margin-bottom: 96px
+
+    &_arrow
+        margin-left: 20px
+
+    &__gender
+        display: flex
+        align-items: center
+        gap: 20px
+        margin-top: 11px
+        margin-bottom: 13px
+
+    &__radio
+        display: flex
+        align-items: center
+        +font(300, 11px, 13px, #000000)
+
+    &__input
+        display: none
+
+    &__span
+        position: relative
+        display: inline-block
+        width: 15px
+        height: 15px
+        border-radius: 50%
+        border: 1px solid $colorCartBorder
+        margin-right: 10px
+
+    &__input:checked + .registration__span
+        background: #FFFFFF
+        box-shadow: 0px 0px 5px $selectColor
+
+    &__input:checked + .registration__span::before
+        content: ''
+        position: absolute
+        left: 2px
+        top: 2px
+        background: $selectColor
+        width: 11px
+        height: 11px
+        border-radius: 50%
+
+.perks
+    margin-left: 128px
+
+    &__heading
+        +font(300, 24px, 29px, #000000)
+
+    &__text
+        +font(300, 24px, 29px, #000000)
+        margin-top: 22px
+        margin-bottom: 21px
+
+    // &__ul
+    //     margin-left: 27px
+
+    &__list
+        +font(300, 24px, 29px, #000000)
+        list-style-type: none
+        // list-style-position: inside
+        // list-style-image: url(../img/list.svg)
+        background: url(../img/list.svg) no-repeat left center
+
+        &:not(:last-child)
+            margin-bottom: 16px
+
+    &__loyalty
+        margin-left: 43px
+
+    // &__list::before
+    //     content: url(../img/list.svg)
+    //     margin-right: 22px

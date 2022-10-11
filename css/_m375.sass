@@ -1,0 +1,364 @@
+@media (max-width: 767px)
+    .center
+        padding-left: calc(50% - 212px)
+        padding-right: calc(50% - 212px)
+
+        &__item_laptop
+            padding-left: 0
+            padding-right: 0
+
+    .header
+        &__icons
+            &:not(:last-child)
+                margin-right: 0
+
+            &_desc
+                display: none
+
+            &_mob
+                display: block
+
+    .nav
+        width: 100%
+        top: 0
+        right: -100%
+        // height: 100vh
+        padding-bottom: 16px
+
+        &__links-menu
+            display: flex
+            justify-content: center
+            gap: 33px
+
+        &__heading
+            margin: 0
+
+        &__list-catalog
+            margin-top: 12px
+
+        &__items
+            margin-top: 8px
+
+            & li:not(:first-child)
+                margin-top: 6px
+
+    .promo
+        height: 363px
+        display: flex
+        justify-content: center
+
+        &__img
+            display: none
+
+        &__text
+            display: flex
+            align-items: center
+            justify-content: center
+            padding-top: 0
+
+        &__h1
+            +fontMedia(38px, 46px)
+
+        &__h2
+            +fontMedia(20px, 24px)
+
+    .offer
+        padding-top: 64px
+        padding-bottom: 64px
+
+        &__top
+            flex-direction: column
+            row-gap: 32px
+
+        &__item
+            height: 247px
+            flex-basis: auto
+
+        &__bottom
+            height: 111px
+            margin-top: 32px
+
+    .product
+        max-width: 360px
+        width: auto
+        margin-right: -8px
+        margin-left: -8px
+
+    .feature
+        row-gap: 46px
+
+        &__item
+            width: auto
+
+    .subscribe
+        height: 550px
+        gap: 59px
+        padding-bottom: 109px
+
+        &__text
+            +fontMedia(18px, 22px)
+            max-width: 358px
+            width: auto
+
+        &__heading
+            +fontMedia(24px, 37px)
+
+        &__text_form
+            +fontMedia(14px, 21px)
+
+        &__input-text
+            max-width: 245px
+            width: auto
+            height: 46px
+
+        &__button
+            max-width: 95px
+            height: 46px
+
+    .footer-bottom
+        height: 143px
+        flex-direction: column-reverse
+        box-sizing: border-box
+        padding-bottom: 24px
+        padding-top: 43px
+
+    .breadcrumbs
+        flex-direction: column
+        justify-content: space-between
+        box-sizing: border-box
+        padding-bottom: 46px
+        padding-top: 24px
+
+        &__cart-reg
+            justify-content: center
+
+    .filter
+        width: auto
+        // margin-left: -8px
+        margin-left: calc((50% - 212px)/(-2))
+
+        &__svg
+            width: 37.5px
+            height: 25px
+
+        &__summary
+            display: none
+
+        &__details
+            padding-left: 0
+            z-index: 2
+
+            &[open]
+                // width: 100vw
+                width: 360px
+                // height: 100vh
+                padding-left: 8px
+                margin-left: -8px
+                // margin-left: calc((0.5 * 100vw - 212px)/(-2))
+
+    .sort
+        // margin-right: -8px
+        margin-right: calc((50% - 212px)/(-2))
+
+        &__summary
+            +fontMedia(12px, 14px)
+            padding-right: 9px
+
+            &_product
+                +fontMedia(10px, 12px)
+
+        &__details
+            margin-right: 23px
+            position: unset
+
+        &__check
+            gap: 20px
+            right: 0
+            width: 100vw
+            // height: 100vh
+            box-sizing: border-box
+            margin-top: 7px
+            margin-left: 0
+
+    .slide
+        position: relative
+        justify-content: center
+        display: flex
+
+        &__img
+            height: 454px
+            padding-top: 85px
+            padding-bottom: 85px
+
+        &__icons
+            position: absolute
+            z-index: 1
+
+            &_left
+                left: 0
+
+            &_right
+                right: 0
+
+    .item
+        padding-left: 25px
+        padding-right: 25px
+        margin-bottom: 16px
+
+    .description
+        border-bottom: none
+        padding-bottom: 0
+        margin-bottom: 36px
+
+        &__heading
+            margin-bottom: 32px
+
+        &__text
+            line-height: 143.1%
+            padding-left: 0
+            padding-right: 0
+
+        &__price
+            border-bottom: 1px solid $colorBorder
+            padding-bottom: 32px
+            padding-left: 60px
+            padding-right: 60px
+
+    .button
+        &_product
+            margin-top: 49px
+
+        &_cart-click
+            display: inline-block
+            +font(normal, 12px, 14px, #575757)
+            text-transform: lowercase
+            text-align: center
+            width: 175px
+            height: auto
+            padding-left: 18px
+            padding-top: 9px
+            padding-bottom: 9px
+            padding-right: 18px
+
+            &::first-letter
+                text-transform: capitalize
+
+        &_cart-click2
+            width: 175px
+            padding-left: 9px
+            padding-right: 9px
+
+        &_cart-checkout
+            align-self: center
+
+    .catalog
+        padding-bottom: 32px
+
+    .cart
+        margin-bottom: 96px
+        margin-top: 39px
+        // margin-left: -8px
+        // margin-right: -8px
+        margin-left: calc((50% - 212px)/(-2))
+        margin-right: calc((50% - 212px)/(-2))
+
+        &__item
+            gap: 32px
+
+        &__click
+            justify-content: center
+            gap: 9px
+            margin-top: 30px
+
+        &__right
+            padding-top: 48px
+
+        &__form
+            flex-direction: column
+            // align-items: center
+
+        &__price
+            width: 100%
+            display: flex
+            flex-direction: column
+
+    .card
+        &__description
+            padding-top: 13px
+            padding-right: 12px
+            padding-left: 17px
+
+        &__img
+            height: 188px
+
+        &__name
+            +fontMedia(16px, 19px)
+            width: 143px
+
+        &__delete
+            margin-top: -1px
+
+        &__cross
+            width: 10px
+            height: 10px
+
+        &__content
+            gap: 4px
+            margin-top: 25px
+
+        &__text
+            +fontMedia(14px, 17px)
+
+        &__number
+            width: 23px
+            +fontMedia(10px, 12px)
+
+    .form
+        width: 100%
+        &_cart
+            margin-bottom: 48px
+
+    .registration
+        flex-direction: column
+        gap: 40px
+        margin-left: calc((50% - 212px)/(-2))
+        margin-right: calc((50% - 212px)/(-2))
+
+    .perks
+        margin-left: 0
+
+@media (max-width: 425px)
+    .center
+        // padding-left: 8px
+        // padding-right: 8px
+        padding-left: 16px
+        padding-right: 16px
+
+        &__item_laptop
+            padding-left: 0
+            padding-right: 0
+
+    .nav
+        height: 100vh
+
+    .filter
+        margin-left: -8px
+
+        &__details[open]
+            width: 100vw
+            // height: 100vh
+
+    .sort
+        margin-right: -8px
+
+    .cart
+        margin-left: -8px
+        margin-right: -8px
+
+    .registration
+        margin-left: -8px
+        margin-right: -8px
+
+@media (max-width: 359px)
+    body
+        min-width: 375px

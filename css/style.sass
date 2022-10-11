@@ -1,0 +1,635 @@
+@import vars
+@import mixins
+
+@keyframes vibrate
+    0%
+        transform: translate(0)
+    20%
+        transform: translate(-2px, 2px)
+    40%
+        transform: translate(-2px, -2px)
+    60%
+        transform: translate(2px, 2px)
+    80%
+        transform: translate(2px, -2px)
+    100%
+        transform: translate(0)
+
+@keyframes vertical
+    0%
+        transform: translate(0)
+    20%
+        transform: translateY(2px) scale(1.05)
+    40%
+        transform: translateY(-2px) scale(1.05)
+    60%
+        transform: translateY(2px) scale(1.05)
+    80%
+        transform: translateY(-2px) scale(1.05)
+    100%
+        transform: translate(0)
+
+@keyframes puls
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(1.5)
+    100%
+        transform: scale(1)
+
+*
+    margin: 0
+    padding: 0
+
+body
+    font-family: 'Lato', sans-serif
+
+a
+    text-decoration: none
+
+summary
+    display: block
+    outline: none
+
+    &::-webkit-details-marker
+        display: none
+
+.center
+    padding-left: calc(50% - 570px)
+    padding-right: calc(50% - 570px)
+
+.wrapper
+    display: flex
+    flex-direction: column
+    min-height: 100vh
+
+.top
+    flex-grow: 1
+    position: relative
+    overflow: hidden
+
+.header
+    height: 75px
+    background: $colorContent
+    +spaceBetweenCenter()
+    // position: relative
+
+    &__search
+        margin-left: 41px
+
+    &__right
+        display: flex
+        align-items: flex-end
+
+    &__icons
+        &:not(:last-child)
+            margin-right: 33px
+
+        &_mob
+            display: none
+
+.nav
+    background: #FFFFFF
+    position: absolute
+    top: 75px
+    right: -$widthNav
+    width: $widthNav
+    z-index: 3
+    box-sizing: border-box
+    display: flex
+    flex-direction: column
+    padding: 16px 16px 22px 32px
+    transition: right .3s
+
+    &__switch
+        align-self: flex-end
+        transition: fill .3s
+
+        &:hover path
+            fill: $colorContent
+
+    &__heading
+        +font(bold, 14px, 17px, #000000)
+        margin-bottom: 4px
+        margin-top: 9px
+
+    &__catalog
+        list-style-type: none
+
+    &__list-catalog
+        margin-top: 20px
+
+    &__list
+        +font(normal, 14px, 17px, $selectColor)
+        transition: font-weight .3s
+
+        &:hover
+            font-weight: bold
+
+    &__items
+        list-style-type: none
+        margin-left: 22px
+        margin-top: 12px
+
+        & li:not(:first-child)
+            margin-top: 11px
+
+    &__link
+        +font(normal, 14px, 17px, $colorFilterSort)
+        transition: font-weight .3s
+
+        &:hover
+            font-weight: bold
+
+#switcher
+    display: none
+
+    &:checked ~ .nav
+        right: 0
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+
+.promo
+    background: #F1E4E6
+    display: flex
+    padding-left: calc(50% - 800px)
+    padding-right: calc(50% - 800px)
+
+    &__img
+        width: 50%
+
+    &__photo
+        width: 100%
+
+    &__text
+        padding-top: 16%
+
+    &__content
+        border-left: 12px solid $selectColor
+        padding-left: 16px
+
+    &__h1
+        +font(900, 48px, 58px, $colorContent)
+
+    &__h2
+        +font(400, 32px, 38px, $colorContent)
+
+    &__h2_select
+        color: $selectColor
+
+.offer
+    padding-top: 64px
+    padding-bottom: 96px
+
+    &__top
+        display: flex
+        gap: $gap
+
+    &__item
+        height: 260px
+        flex-grow: 1
+        flex-basis: 360px
+        background-position: center
+        background-size: cover
+        +centerColumns()
+
+    &__item_1
+        background-image: url(../img/Group36.jpg)
+
+    &__item_2
+        background-image: url(../img/Group37.jpg)
+
+    &__item_3
+        background-image: url(../img/Group38.jpg)
+
+    &__bottom
+        height: 180px
+        background-image: url(../img/Group39.jpg)
+        background-position: center
+        background-size: cover
+        +centerColumns()
+        margin-top: 30px
+
+    &__text
+        +font(normal, 16px, 19px,#FFFFFF)
+        text-align: center
+
+    &__heading
+        +font(bold, 24px, 29px, $selectColor)
+        text-align: center
+
+.fetured-items
+    display: flex
+    flex-direction: column
+    padding-bottom: 96px
+
+    &__heading
+        +font(normal, 30px, 36px, $colorContent)
+        text-align: center
+
+    &__text
+        +font(normal, 14px, 17px, #9F9F9F)
+        text-align: center
+        margin-top: 6px
+
+.product-box
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+    gap: $gap
+    padding-top: 48px
+    padding-bottom: 48px
+
+.product
+    width: 360px
+    position: relative
+    // transition: transform .3s
+    transition: all .3s
+
+    &:hover
+        transform: scale(1.05)
+
+    &__link
+        display: flex
+
+    &__img
+        width: 100%
+
+    &__content
+        background: #F8F8F8
+        padding: 24px 16px 20px
+    /* padding: 24px 28px 16px 20px; */
+
+    &__name
+        +font(normal, 13px, 16px, #000000)
+
+    &__text
+        +font(300, 14px, 17px, #5D5D5D)
+        margin-top: 12px
+        margin-bottom: 18px
+
+    &__price
+        +font(normal, 16px, 19px, $selectColor)
+
+    &__add
+        position: absolute
+        top: 188px
+        left: 111px
+        display: none
+        justify-content: center
+        align-items: center
+        border: 1px solid #FFFFFF
+        width: 139px
+        height: 44px
+        +font(normal, 14px, 17px, #FFFFFF)
+        transition: all .3s
+
+    &:hover .product__add
+        display: flex
+
+    &:hover .product__img
+        filter: brightness(0.5)
+
+    &__add:hover
+        background-color: #fff
+        color: #000
+
+    &__add:hover .product__cart path
+        fill: black
+
+    &__cart
+        margin-right: 11px
+
+.feature
+    background: $colorContentBottom
+    display: flex
+    gap: $gap
+    padding-top: 104px
+    padding-bottom: 104px
+
+    &__item
+        width: ($widthSite - 2 * $gap) / 3
+        display: flex
+        // justify-content: space-between
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        transition: animation .3s
+
+        &:hover .feature__img
+            animation: puls 1s linear 1 both
+
+    &__heading
+        +font(normal, 20px, 24px, #FBFBFB)
+        margin-top: 19px
+        margin-bottom: 16px
+
+    &__text
+        +font(300, 14px, 17px, #FBFBFB)
+        text-align: center
+
+.subscribe
+    height: 448px
+    background-image: url(../img/contacts_back.png)
+    background-repeat: no-repeat
+    background-position: center bottom
+    background-size: cover
+    display: flex
+    justify-content: space-between
+    flex-wrap: wrap
+    box-sizing: border-box
+    padding-top: 97px
+    padding-bottom: 126px
+
+    &__info
+        // width: 360px
+        // width: 50%
+        display: flex
+        flex-direction: column
+        align-items: center
+        gap: $gap
+
+    &__text
+        width: 358px
+        +font(normal, 20px, 24px, $colorContentBottom)
+        text-align: center
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+
+        &_select
+            font-style: italic
+
+    &__form
+        // width: 557px
+        width: 50%
+        +centerColumns()
+        // margin-top: 150px
+        // margin-bottom: 156px
+
+    &__heading
+        // +font(bold, 24px, 167.2%, $colorContentBottom)
+        +font(bold, 24px, 39px, $colorContentBottom)
+        text-align: center
+
+    &__text_form
+        +font(normal, 18px, 167.2%, $colorContentBottom)
+        text-align: center
+        margin-bottom: 21px
+
+    &__push
+        display: flex
+
+    &__input-text
+        +font(normal, 14px, 17px, $colorContentBottom)
+        // display: flex
+        align-items: center
+        outline: none
+        // opacity: 0.67
+        background: #E1E1E1
+        border: 0
+        height: 50px
+        width: 256px
+        box-sizing: border-box
+        border-radius: 25px 0 0 25px
+        padding-top: 7px
+        padding-left: 22px
+        padding-bottom: 6px
+        padding-right: 5px
+
+    &__button
+        +font(normal, 14px, 17px, #FFFFFF)
+        text-align: center
+        background: $selectColor
+        border: 0
+        height: 50px
+        width: 100px
+        box-sizing: border-box
+        border-radius: 0 25px 25px 0
+        outline: none
+        transition: background .3s
+
+    &__button:hover
+        background: #E05C6E
+
+.sort
+    display: flex
+
+    &__summary
+        +font(normal, 14px, 17px, $colorFilterSort)
+        padding-right: 10px
+
+    &__details
+        position: relative
+        padding-top: 13px
+        padding-bottom: 16px
+        margin-right: 28px
+
+        &_product
+            margin-right: 22px
+
+    &__check
+        width: calc(100% + 7px)
+        display: flex
+        flex-direction: column
+        position: absolute
+        z-index: 1
+        background: #FFFFFF
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+        padding: 10px
+        margin-top: 5px
+        margin-left: -10px
+
+        &_product
+            width: calc(100% + 1px)
+
+    // &__checkbox
+    //     margin-right: 10px
+
+    &__label
+        display: flex
+        align-items: center
+        +font(normal, 14px, 16px, $colorFilterSort)
+
+        &:not(:last-child)
+            margin-bottom: 6px
+
+    &__checkbox
+        display: none
+
+    &__span
+        position: relative
+        display: inline-block
+        width: 13px
+        height: 13px
+        border-radius: 3px
+        border: 1px solid $colorCartBorder
+        margin-right: 10px
+
+    &__checkbox:checked + .sort__span
+        background: #FFFFFF
+
+    &__checkbox:checked + .sort__span::before
+        content: ''
+        position: absolute
+        left: 1px
+        top: 1px
+        background: $colorCartBorder
+        width: 11px
+        height: 11px
+        border-radius: 3px
+
+.button
+    display: flex
+    align-items: center
+    box-sizing: border-box
+    outline: none
+    transition: all .3s
+
+    &_index
+        +font(normal, 16px, 19px, $colorButtonText)
+        +button(auto, auto, $colorButtonBorder,#FFFFFF)
+        align-self: center
+        padding: 14px 38px
+        transition: all .3s
+
+        &:hover
+            color: #FFFFFF
+            background: $selectColor
+
+    &_cart
+        +font(300, 11px, 13px, #4A4A4A)
+        +button(100px, 34px, $colorCartBorder, #FFFFFF)
+        padding-left: 13px
+        padding-right: 11px
+        margin-top: 4px
+        transition: all .3s
+
+        &:hover
+            color: #FFFFFF
+            background: $colorCartBorder
+
+    &_cart-click
+        +font(300, 14px, 17px, #000000)
+        text-transform: uppercase
+        width: 235px
+        height: 49px
+        padding-left: 38px
+        padding-top: 17px
+        padding-bottom: 16px
+        padding-right: 39px
+        margin-top: 0px
+
+    &_cart-click2
+        width: 225px
+        padding-left: 37px
+        padding-right: 38px
+
+    &_cart-checkout
+        +font(300, 16px, 19px, #FFFFFF)
+        +button(auto, 50px, $colorButtonBorder, $selectColor)
+        text-align: center
+        width: 275px
+        padding: 15px 42px 15px 40px
+        transition: all .3s
+
+        &:hover
+            background: #F5F3F3
+            color: $selectColor
+
+    &_product
+        +font(normal, 16px, 19px, $colorButtonText)
+        +button(211px, 47px, $colorButtonBorder, #FFFFFF)
+        padding-left: 23px
+        margin-top: 32px
+        transition: all .3s
+
+        &:hover
+            color: #FFFFFF
+            background: $colorButtonText
+
+        &:hover path
+            fill: #FFFFFF
+
+    &_registration
+        +font(normal, 14px, 17px, #FFFFFF)
+        +button(167px, 50px, $colorButtonBorder, $selectColor)
+        padding-top: 15px
+        padding-bottom: 16px
+        padding-left: 29px
+        margin-top: 18px
+        transition: all .3s
+
+        &:hover
+            color: $selectColor
+            background: #FFFFFF
+
+        &:hover path
+            fill: $selectColor
+
+.form
+    width: 360px
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+    &_cart
+        margin-bottom: 57px
+
+    &__heading
+        +font(300, 16px, 19px, $colorContent)
+
+    &__input
+        +font(normal, 13px, 16px, $colorContent)
+        border: 1px solid $colorCartBorder
+        background: #FFFFFF
+        outline-color: grey
+        padding: 13px 16px 16px 16px
+
+        &::placeholder
+            color: #B1B1B1
+
+        &_cart::placeholder
+            color: #8E8E8E
+
+        &_reg
+            padding-top: 12px
+            padding-bottom: 15px
+
+    &__text
+        +font(300, 13px, 16px, #B1B1B1)
+        margin-top: -5px
+
+.footer-bottom
+    height: 79px
+    background: $colorContentBottom
+    +spaceBetweenCenter()
+
+    &__text
+        +font(normal, 16px, 19px, #FBFBFB)
+
+    &__media
+        display: flex
+        gap: 7px
+
+    &__link
+        display: flex
+        transition: all .3s
+
+    &__link:hover .path__back
+        fill: $selectColor
+
+    &__link:hover .path__icon
+        fill: #FFFFFF
+
+    &__link:hover
+        animation: vertical 1s linear 1 both
+
+@import catalog
+
+@import product
+
+@import cart
+
+@import registration
+
+@import m768
+
+@import m375

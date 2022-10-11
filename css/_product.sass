@@ -1,0 +1,68 @@
+.slide
+    background: #F7F7F7
+    border: 1px solid $colorBorder
+    +spaceBetweenCenter()
+
+    &__img
+        display: flex
+        justify-content: center
+        align-items: center
+        padding-top: 11px
+        padding-bottom: 42px
+
+    &__icons
+        display: inline-block
+
+    &__arrow
+        transition: all .3s
+
+    &__arrow:hover path.arrow
+        fill: $selectColor
+
+.item
+    border: 1px solid $colorBorder
+    background: #FFFFFF
+    position: relative
+    z-index: 1
+    +centerColumns()
+    padding: 65px 250px
+    margin-top: -65px
+    margin-bottom: 80px
+
+    &__cart
+        margin-right: 23px
+
+    &__sort
+        display: flex
+        flex-direction: column
+        align-items: center
+
+.description
+    +centerColumns()
+    border-bottom: 1px solid $colorBorder
+    padding-bottom: 65px
+    margin-bottom: 52px
+
+    &__heading-mini
+        +font(300, 14px, 17px, $selectColor)
+
+    &__block
+        width: 63px
+        height: 3px
+        background: $colorDetails
+        margin-bottom: 12px
+        margin-top: 12px
+
+    &__heading
+        +font(300, 18px, 22px, #4D4D4D)
+        margin-bottom: 48px
+
+    &__text
+        +font(300, 14px, 17px, #5E5E5E)
+        text-align: center
+        padding-left: 43px
+        padding-right: 43px
+
+    &__price
+        +font(300, 24px, 29px,$colorDetails)
+        margin-top: 32px

@@ -1,0 +1,129 @@
+.cart
+    display: flex
+    justify-content: space-between
+    margin-top: 96px
+    margin-bottom: 128px
+
+    &__item
+        display: flex
+        flex-direction: column
+        gap: 40px
+
+    &__click
+        display: flex
+        justify-content: space-between
+        margin-top: 72px
+
+    &__right
+        width: 360px
+        padding-top: 17px
+
+    &__form
+        padding-top: 20px
+
+    &__heading
+        +font(300, 16px, 19px, $colorContent)
+
+        &_select
+            color: $selectColor
+            font-weight: bold
+            margin-right: -6px
+
+    &__price
+        background: #F5F3F3
+        text-align: right
+        box-sizing: border-box
+        padding-left: 43px
+        padding-right: 43px
+        padding-bottom: 42px
+        padding-top: 39px
+
+    &__text
+        +font(normal, 11px, 13px, #4A4A4A)
+        margin-bottom: 12px
+        margin-right: -9px
+
+    &__line
+        border: none
+        color: #E2E2E2
+        background-color: #E2E2E2
+        height: 1px
+        margin-top: 21px
+        margin-bottom: 17px
+
+.card
+    display: flex
+    // filter: drop-shadow(17px 19px 24px rgba(0, 0, 0, 0.13))
+    box-shadow: 17px 19px 24px rgba(0, 0, 0, 0.13)
+    transition: transform .3s
+
+    &:hover
+        transform: scale(1.05)
+
+    &__description
+        width: 390px
+        background: #FFFFFF
+        box-sizing: border-box
+        padding-top: 22px
+        padding-right: 22px
+        padding-left: 32px
+
+    &__link_img
+        display: flex
+
+    &__img
+        height: 306px
+
+    &__link_text
+        display: flex
+        justify-content: space-between
+
+    &__name
+        +font(normal, 24px, 29px, $colorContent)
+        display: inline-block
+        width: 262px
+
+    &__delete
+        display: inline-block
+        height: fit-content
+        margin-top: 6px
+        transition: all .3s
+
+        &:hover path
+            fill: $colorContent
+
+    &__content
+        display: flex
+        flex-direction: column
+        gap: 6px
+        margin-top: 42px
+
+    &__text
+        +font(normal, 22px, 26px, #575757)
+
+        &_select
+            color: $colorDetails
+
+    &__quantity
+        display: flex
+        gap: 24px
+
+    &__number
+        width: 44px
+        text-align: center
+        border: 1px solid $colorBorder
+        background: #FFFFFF
+        +font(normal, 18px, 22px, colorContent)
+        outline-color: grey
+
+        &::placeholder
+            color: #656565
+
+input[type="number"]
+    -moz-appearance: textfield
+    -webkit-appearance: textfield
+    appearance: textfield
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button
+    display: none
